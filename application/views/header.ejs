@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  	<head>
+		<title><%=title;%></title>
+		<script type="text/javascript">
+			var baseurl = '<%=baseurl%>';
+		</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+		<link rel="stylesheet" type="text/css" href="<%=baseurl%>/assets/css/style.css">
+		<link href="<%=baseurl%>/assets/carousel/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="<%=baseurl%>/assets/file_style.css">
+		<script type="text/javascript" src="<%=baseurl%>/assets/js/jquery.min.js"></script>
+		<script type="text/javascript" src="<%=baseurl%>/assets/plug-gallery/dist/js/jquery.flex-photo-gallery.js"></script>
+        <link rel="stylesheet" type="text/css" href="<%=baseurl%>/assets/plug-gallery/dist/css/jquery.flex-photo-gallery.css"/>
+		<script type="text/javascript" src="<%=baseurl%>/assets/socket.js"></script>
+		<script type="text/javascript">
+		    /*var node = io.connect( 'http://localhost:3500');
+		    node.on('chat', function(data){
+		        
+		    });*/
+		</script>
+
+		<link href="<%=baseurl%>/assets/carousel/css/mdb.min.css" rel="stylesheet">
+		<style type="text/css">
+		body {	
+			background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('<%=baseurl%>/assets/images/bg.jpg');
+			background-position: center !important;
+			background-repeat: no-repeat !important;
+			background-size: cover !important;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="app-title">
+			<h1 class="text-center"><%=title;%></h1>
+		</div>
+

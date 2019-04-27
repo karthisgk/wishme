@@ -1,0 +1,48 @@
+<% include header %>    
+
+    <form action="<%=baseurl%>/upload" method="post" enctype="multipart/form-data" id="s-form">
+        <input type="file" id="pic" style="display: none;" name="photos" multiple />        
+
+        <div class="row" style="padding: 10px; margin-left: 0; margin-right: 0;">            
+            <div class="col-sm-4 col-xs-12 input-area" id="inputs">
+                <input type="hidden" class="form-input" data-id="_id" value="<%=content_id;%>" />
+                <div class="form-group">
+                    <label>Name: </label>
+                    <input type="text" maxlength="50" class="form-control form-input" data-id="name" placeholder="Enter Name" />
+                </div>
+                <div class="form-group">
+                    <label>Birthday Boy's Email: </label>
+                    <input type="email" maxlength="150" class="form-control form-input" data-id="toEmail" placeholder="Enter Birthday Boy's email id" />
+                </div>
+                <div class="form-group">
+                    <label>Message: </label>
+                    <textarea class="form-control form-input" maxlength="300" placeholder="Text-Message" data-id="message"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Birthday Date: </label>
+                    <input type="date" class="form-control form-input" data-id="bDay" />
+                </div>
+
+                <div id="custom-error-tag" class="text-center">
+                    <ul class="parsley-errors-list filled"><li></li></ul>
+                </div>
+
+                <div class="form-group text-center">
+                    <button class="btn btn-success" onclick="$('#pic').click();" type="button">Browse</button>
+                    <button class="btn btn-primary" id="submit" type="button">Save</button>
+                </div>
+            </div>
+
+            <div class="col-sm-8 col-xs-12">
+                <div class="upload-area">
+                    <div class="col-xs-12 scrolable-content scrolable-bar" id="gallery">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </form>
+
+<% include footer %>
+  

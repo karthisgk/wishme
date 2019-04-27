@@ -1,0 +1,126 @@
+
+
+
+div#loading {
+    /*position: relative;*/
+    display: none;
+}
+
+
+div#loading img.image {
+    position: absolute;
+    z-index: 10140;
+    top: 40%;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    margin:-60px 0 0 -60px;
+    -webkit-animation:spin 4s linear infinaite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(1600deg); } }
+
+.scrolable-bar::-webkit-scrollbar  {
+  width: 3px;
+}
+ 
+.scrolable-bar::-webkit-scrollbar-thumb {
+  background: #e5e5e5; 
+  border-radius: 10%;
+}
+
+.scrolable-bar::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+.scrolable-content {
+  width: 20px;
+  height: 200px;
+  overflow: auto;
+  margin: 0 10px;
+}
+
+.scrolable-content {
+  width: 100% !important;
+  margin: 20px 0px;
+}
+
+ul.file-list {
+	list-style: none;
+}
+
+ul.file-list li {
+    padding: 1px 5px;
+    cursor: pointer;
+}
+
+ul.file-list li:hover, ul.file-list li.selected {
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+ul.file-list li.selected {
+    background-color: #c3adc3;
+}
+
+body {
+  background: #5a5a5a;
+  width: 100%;
+}
+
+.app-title {
+  width: fit-content;
+  margin: auto;
+  padding: 10px 10px 1px;
+  background: #aaa;
+  margin-top: 15px;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.upload-area {
+  width: 100%;
+  margin: auto;
+}
+
+.upload-area > div {
+  border: 1px solid #fff;
+  border-radius: 10px;
+  height: 550px;
+  padding: 0;
+}
+
+.input-area {
+  margin-top: 25px;
+  padding: 10px;
+}
+
+.input-area label {
+  color: #fff;
+  font-size: 20px;
+}
+
+.pic-area {
+  width: 70%;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.carousel-item > .view {
+  border-radius: 10px;
+}
+
+.parsley-errors-list > li {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff5f4a;
+}
+
+#custom-error-tag {
+  display: none;
+}

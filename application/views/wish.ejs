@@ -1,0 +1,53 @@
+<% include header %>
+<div id="inputs">
+	<input type="hidden" class="form-input" data-id="_id" value="<%=content_id;%>" />
+</div>
+
+
+<div class="pic-area">
+	<!--Carousel Wrapper-->
+	<div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
+	  <!--Indicators-->
+	  	<ol class="carousel-indicators">
+	  		<%images.forEach((img, k) => {%>			
+			    <li data-target="#carousel-example-2" data-slide-to="<%=k%>" class="<%=(k == 0) ? 'active' : '';%>"></li>		
+			<%});%>
+		</ol>
+		<!--/.Indicators-->
+
+		<!--Slides-->
+		<div class="carousel-inner" role="listbox">
+
+			<%images.forEach((img, k) => {%>
+			    <div class="carousel-item <%=(k == 0) ? 'active' : '';%>">
+			      	<div class="view">
+			        	<img class="d-block w-100" src="<%=img;%>"
+			          alt="First slide">
+			        	<div class="mask rgba-black-light"></div>
+			    	</div>
+			    	<div class="carousel-caption">
+			        	<h3 class="h3-responsive"><b><%=wisherMessage;%></b></h3>
+			    	</div>
+			    </div>
+			<%});%>
+		</div>
+		<!--/.Slides-->
+
+		<!--Controls-->
+		<a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
+		    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		    <span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
+		    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		    <span class="sr-only">Next</span>
+		</a>
+		<!--/.Controls-->
+	</div>
+	<!--/.Carousel Wrapper-->
+</div>
+
+<script type="text/javascript">
+	var triggerWish = true;
+</script>
+<% include footer %>  
