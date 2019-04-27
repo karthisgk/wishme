@@ -24,7 +24,7 @@ var main = {
 	    }
 	},
 	session_time: 999999999999,
-	liveUrl: 'http://localhost/node',
+	liveUrl: 'http://54.179.165.156',
 	initApp: function(dir){
 		main.app_dir = dir;
 		return main;
