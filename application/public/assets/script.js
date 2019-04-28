@@ -481,8 +481,10 @@ $(document).ready(function(){
       $('#custom-error-tag').show().find('li').text('Must upload 2 images');
       return;
     }
+    $('#loading').show();
     var xhr = ajx({path: '/upload', method: 'post'}, fd);
     var complete = function(){
+      $('#loading').hide();
       var res = JSON.parse(xhr.responseText);
       if(res.code == 'SGK_001'){
         location.href = baseurl + '/' + res.data.content_id;
