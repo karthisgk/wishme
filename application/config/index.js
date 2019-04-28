@@ -24,7 +24,7 @@ var main = {
 	    }
 	},
 	session_time: 999999999999,
-	liveUrl: 'http://54.179.165.156',
+	liveUrl: 'https://bday.karthisgk.be',
 	initApp: function(dir){
 		main.app_dir = dir;
 		return main;
