@@ -58,7 +58,7 @@ function Routes(app){
 	setInterval(function(){
 		
 		var ct = common.current_time();
-		if(ct.split(' ')[1] >= "10:45:00" && ct.split(' ')[1] < "10:45:11"){
+		if(ct.split(' ')[1] >= "00:00:00" && ct.split(' ')[1] < "00:00:11"){
 			var $wh = {bDay: ct.split(' ')[0], isComplete: {$ne: 4}};
 			self.db.connect(function(newdb){
 
