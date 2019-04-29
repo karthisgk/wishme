@@ -33,6 +33,7 @@ app.use(session({
 }));
 
 app.use(function(req, res, next){
+  console.log(req.protocol);
     if(req.protocol == 'http' && req.host != 'localhost')
       res.redirect(appConfig.liveUrl + req.path);
     next();
