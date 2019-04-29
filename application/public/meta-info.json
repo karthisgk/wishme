@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://bday.karthisgk.be/"
+  },
+  "headline": "Madurai Birthday Wishes",
+  "image": [
+    "https://bday.karthisgk.be/assets/images/art1.jpg",
+    "https://bday.karthisgk.be/assets/images/art2.jpg",
+    "https://bday.karthisgk.be/assets/images/art3.jpg",
+    "https://bday.karthisgk.be/assets/images/art4.jpg"
+   ],
+  "datePublished": "2019-04-29T08:00:00+08:00",
+  "dateModified": "2019-04-29T09:20:00+08:00",
+  "author": {
+    "@type": "Person",
+    "name": "karthi sgk"
+  },
+   "publisher": {
+    "@type": "Organization",
+    "name": "karthisgk",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bday.karthisgk.be/assets/images/bg.jpg"
+    }
+  },
+  "description": "wish me, wishme, wishyou wish you, wish you happy, live long, Wish your friend birthday, birthday wishes, frd, friends, nanbenda, nanban porantha naal, nanban, nee porandathey oru saaba kedu, ne porandathey oru saabam, nee poranthathe, wish birthday at 12am, how to wish bithday, best way to wish"
+}
