@@ -31,6 +31,13 @@ app.use(session({
     maxAge: appConfig.session_time
   }
 }));
+
+app.use(function(req, res, next){
+    if(req.protocol == 'http' && req.host != 'localhost')
+      res.redirect(appConfig.liveUrl + req.path);
+    next();
+});
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
