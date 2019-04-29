@@ -79,7 +79,7 @@ function Routes(app){
 		res.render('index', d);		
 	});
 
-	app.get('/:ID', function(req, res) {
+	app.get('/upd/:ID', function(req, res) {
 		var d = {title : config.name, baseurl: baseurl};		
 		self.db.get('content', {_id: req.params.ID}, data => {
 			if(data.length > 0){

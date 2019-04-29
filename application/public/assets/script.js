@@ -487,7 +487,7 @@ $(document).ready(function(){
       $('#loading').hide();
       var res = JSON.parse(xhr.responseText);
       if(res.code == 'SGK_001'){
-        location.href = baseurl + '/' + res.data.content_id;
+        location.href = baseurl + '/upd/' + res.data.content_id;
       }else
         $('#custom-error-tag').show().find('li').text(res.message);
     };
