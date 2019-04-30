@@ -4,6 +4,8 @@ var common = require('../public/common.js');
 var multer  = require('multer');
 var path = require('path');
 const fs = require('fs');
+var request = require('request');
+
 var storage = multer.diskStorage({
 	destination: function (req, file, cb) {
 		var dir = './application/uploads/tmp/';
@@ -27,8 +29,19 @@ var upload = multer({ storage: storage,
 			return cb(null, false, new Error('Not an image'));
 		}
 	} });
+
 var passData = {};
 var baseurl = appConfig.liveUrl;
+
+String.prototype.isNumeric = function(){
+  return /^[0-9]+$/.test(this);
+};
+
+String.prototype.isEmail = function(){
+  var pattern = /^[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*@[a-z0-9]+(\-[a-z0-9]+)*(\.[a-z0-9]+(\-[a-z0-9]+)*)*\.[a-z]{2,4}$/;
+  return pattern.test(this);
+};
+
 function Routes(app){
 	var self = this;
 	self.db = require('../config').db;
@@ -36,24 +49,45 @@ function Routes(app){
 		this.smtp = smtp;
 	});
 
-	this.sendMail = function(cont){
+	this.sendMailorSms = function(cont){
 		var title = config.name;
 		var adminMail = appConfig.smtp_config.auth.user;
 		var content = '<h3>'+title+'</h3>';
 		content += '<p>You have a wishes from ' + title + ' </p>'; 
 		content += '<p><a href="'+baseurl + '/wish/' + cont._id +'">click here</a>' 
 		+' to show your wish from <b>'+ cont.name.toUpperCase() +'</b></p>';
-		self.smtp.getFile({title: title, content: content}, (d) => {
-			var mail = {
-			    from: adminMail,
-			    to: cont.toEmail,
-			    subject: title + " | " + cont.name + ' wish you to happy Birthday',
-			    html: d.html
-			};
-			self.smtp.sendMail(mail, (err, res) => {
-				if (err) {console.log(err);}
+		if(cont.toEmail.isEmail()){
+			self.smtp.getFile({title: title, content: content}, (d) => {
+				var mail = {
+				    from: adminMail,
+				    to: cont.toEmail,
+				    subject: title + " | " + cont.name + ' wish you to happy Birthday',
+				    html: d.html
+				};
+				self.smtp.sendMail(mail, (err, res) => {
+					if (err) {console.log(err);}
+				});
 			});
-		});
+		}
+		else if(cont.toEmail.isNumeric()){
+			var paramData = appConfig.sms_config;
+			paramData.phone = cont.toEmail;
+			paramData.message = cont.name + ' wish you to happy Birthday\n';
+			paramData.message += 'copen the link to show your wish from ' + cont.name.toUpperCase() + '\n';
+			paramData.message += baseurl + '/wish/' + cont._id;
+			var clientServerOptions = {
+			    uri: 'http://www.way2sms.com/api/v1/sendCampaign',
+			    body: JSON.stringify(paramData),
+			    method: 'POST',
+			    headers: {
+			        'Content-Type': 'application/json'
+			    }
+			}
+			request(clientServerOptions, function (error, response) {
+			    /*console.log(error,response.body);
+			    return;*/
+			});
+		}
 	};
 	setInterval(function(){
 		
@@ -65,7 +99,7 @@ function Routes(app){
 				self.db.get('content', $wh, conts => {
 					if(conts.length > 0){
 						conts.forEach((dt, k) => {
-							self.sendMail(dt);
+							self.sendMailorSms(dt);
 						});				
 						newdb.collection('content').updateMany($wh, {$set: {isComplete: 4}}, (err, r) => {});
 					}
@@ -149,6 +183,23 @@ function Routes(app){
 			res.json(common.getResponses('002', {}));
 			return;
 		}
+
+		if(req.body.name == '' ||
+			req.body.toEmail == '' ||
+			req.body.bDay == ''){
+			removeUpload();
+			res.json(common.getResponses('002', {}));
+			return;
+		}
+
+		var toEmail = req.body.toEmail;
+	    if(!toEmail.isEmail()){
+		    if(toEmail.length < 10 || !toEmail.isNumeric()){
+		        removeUpload();
+				res.json(common.getResponses('008', {}));
+		        return;
+		    }
+	    }
 
 		if(common.current_time().split(' ')[0] >= req.body.bDay){
 			removeUpload();

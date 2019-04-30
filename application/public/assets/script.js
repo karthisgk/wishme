@@ -462,6 +462,14 @@ $(document).ready(function(){
     if(!$('#s-form').parsley().validate())
         return;
 
+    var toEmail = $('#inputs input[data-id="toEmail"]').val();
+    if(!toEmail.isEmail()){
+      if(toEmail.length < 10 || !toEmail.isNumeric()){
+          $('#custom-error-tag').show().find('li').text('Enter valid email address or mobile number');
+          return;
+      }
+    }
+
     var today = addHour(new Date(), 24).toISOString().split('T')[0];
     if(current_time().split(' ')[0] >= $('#inputs input[data-id="bDay"]').val()){
       $('#custom-error-tag').show().find('li').text('Select Future Date');
@@ -470,7 +478,7 @@ $(document).ready(function(){
     var fd = new FormData();
     fd.append('_id', $('#inputs input[data-id="_id"]').val());
     fd.append('name', $('#inputs input[data-id="name"]').val());
-    fd.append('toEmail', $('#inputs input[data-id="toEmail"]').val());
+    fd.append('toEmail', toEmail);
     fd.append('message', $('#inputs [data-id="message"]').val());
     fd.append('bDay', $('#inputs input[data-id="bDay"]').val());
     files.forEach((f, k) => {

@@ -43,6 +43,11 @@ var responses = [
 		code: codeKey + '007',
 		message: 'Select Future Date',
 		data: {}
+	},
+	{
+		code: codeKey + '008',
+		message: 'Enter valid email address or mobile number',
+		data: {}
 	}
 ];
 

@@ -23,8 +23,14 @@ var main = {
 	        pass: "vijisgk97"
 	    }
 	},
+	sms_config: {
+		apikey: '3S6LNE20K8ZPQXJ2PGOWTYBIJ18K7HAT',
+		secret: '4C82O55NQ4AION21',
+		senderid: 'karthisgk',
+		usetype: 'stage'
+	},
 	session_time: 999999999999,
-	liveUrl: 'https://bday.karthisgk.be',
+	liveUrl: 'http://localhost/node',
 	initApp: function(dir){
 		main.app_dir = dir;
 		return main;
