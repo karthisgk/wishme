@@ -1,7 +1,7 @@
 <% include header %>    
 
     <form action="<%=baseurl%>/upload" method="post" enctype="multipart/form-data" id="s-form">
-        <input type="file" id="pic" style="display: none;" name="photos" multiple />        
+        <input type="file" id="pic" style="display: none;" name="photos" multiple  accept="image/*" />        
 
         <div class="row" style="padding: 10px; margin-left: 0; margin-right: 0;">            
             <div class="col-sm-4 col-xs-12 input-area" id="inputs">
@@ -33,11 +33,8 @@
                 </div>
             </div>
 
-            <div class="col-sm-8 col-xs-12">
-                <div class="upload-area">
-                    <div class="col-xs-12 scrolable-content scrolable-bar" id="gallery">
-                        
-                    </div>
+            <div class="col-sm-8 col-xs-12 upload-area">
+                <div class="scrolable-content scrolable-bar row" id="gallery">
                 </div>
             </div>
         </div>

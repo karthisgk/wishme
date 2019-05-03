@@ -350,10 +350,20 @@ function uniqueid() {
 }
 
 function intGallery(imageArray) {
-  $('#gallery').flexPhotoGallery({
+  /*$('#gallery').flexPhotoGallery({
       imageArray: imageArray,
       isViewImageOnClick: true
-  });
+  });*/
+  $('#gallery').html('');
+  if(imageArray.length > 0) {
+    imageArray.forEach((d, k) => {
+      var $ele = '<div class="col-xs-4 grid">\
+                    <div style="background: url(\'' + d.url + '\');">\
+                    </div>\
+                  </div>';
+      $('#gallery').append($ele);
+    });
+  }
 }
 
 var defUrl = baseurl;
@@ -407,7 +417,7 @@ $(document).ready(function(){
         var count = 0;
         files = files.concat(data.data.content.images);
         data.data.content.images.forEach((img, k) => {                   
-              var g = new Image();
+              /*ar g = new Image();
               g.onload = function(){
                 var img = {};
                 img.url = g.src;
@@ -420,7 +430,13 @@ $(document).ready(function(){
                   intGallery(imageArray);
                 }
               };
-              g.src = img;
+              g.src = img;*/
+              imageArray[k] = {url: img};
+              count++;
+              if(count == data.data.content.images.length){
+                $('#loading').hide();
+                intGallery(imageArray);
+              }
         });
       }
     });
@@ -437,7 +453,7 @@ $(document).ready(function(){
     $('#loading').show();
     files.forEach((f, k) => {
       if(typeof f.name != 'undefined'){             
-          var g = new Image();
+          /*var g = new Image();
           g.onload = function(){
             var img = {};
             img.url = g.src;
@@ -450,7 +466,13 @@ $(document).ready(function(){
               intGallery(imageArray);
             }
           };
-          g.src = URL.createObjectURL(f);
+          g.src = URL.createObjectURL(f);*/
+          count++;
+          imageArray[k] = {url: URL.createObjectURL(f)};
+          if(count == files.length){
+            $('#loading').hide();
+            intGallery(imageArray);
+          }
       }else
         count++;
     });    
