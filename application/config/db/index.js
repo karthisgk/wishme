@@ -3,7 +3,7 @@ const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 var collection = require('./collections.js');
 
-const url = 'mongodb://localhost:27017';
+const url = 'mongodb://karthisgk:vijisgk97@bday.karthisgk.be:27017';
 const dbName = 'wishes';
 
 
