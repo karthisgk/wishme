@@ -5,6 +5,7 @@ var multer  = require('multer');
 var path = require('path');
 const fs = require('fs');
 var request = require('request');
+var Booking = require('./Booking.js');
 
 var storage = multer.diskStorage({
 	destination: function (req, file, cb) {
@@ -48,6 +49,7 @@ function Routes(app){
 	appConfig.setSMTPConfig((smtp) => {
 		this.smtp = smtp;
 	});
+	Booking = new Booking();
 
 	this.sendMailorSms = function(cont){
 		var title = config.name;
