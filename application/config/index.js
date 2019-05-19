@@ -30,7 +30,7 @@ var main = {
 		usetype: 'stage'
 	},
 	session_time: 999999999999,
-	liveUrl: 'https://bday.karthisgk.be',
+	liveUrl: 'http://bday.karthisgk.be',
 	initApp: function(dir){
 		main.app_dir = dir;
 		return main;
