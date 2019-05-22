@@ -34,6 +34,13 @@ app.use(session({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(function(req, res, next){
+    res.header('Access-Control-Allow-Origin', 'http://bday.karthisgk.be');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type,token');
+    next();
+});
+
 var router = new Routes(express.Router());
 app.use(router.r);
 
