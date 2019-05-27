@@ -357,7 +357,7 @@ function intGallery(imageArray) {
   $('#gallery').html('');
   if(imageArray.length > 0) {
     imageArray.forEach((d, k) => {
-      var $ele = '<div class="col-xs-4 grid">\
+      var $ele = '<div class="col-lg-12 col-sm-4 col-xs-12 grid">\
                     <div style="background: url(\'' + d.url + '\');">\
                     </div>\
                   </div>';
