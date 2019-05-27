@@ -3,7 +3,12 @@
     <form action="<%=baseurl%>/upload" method="post" enctype="multipart/form-data" id="s-form">
         <input type="file" id="pic" style="display: none;" name="photos" multiple  accept="image/*" />        
 
-        <div class="row" style="padding: 10px; margin-left: 0; margin-right: 0;">            
+        <div class="row" style="padding: 10px; margin-left: 0; margin-right: 0;">
+            <div class="col-sm-8 col-xs-12 upload-area">
+                <div class="scrolable-content scrolable-bar row" id="gallery">
+                </div>
+            </div>
+
             <div class="col-sm-4 col-xs-12 input-area" id="inputs">
                 <input type="hidden" class="form-input" data-id="_id" value="<%=content_id;%>" />
                 <div class="form-group">
@@ -30,11 +35,6 @@
                 <div class="form-group text-center">
                     <button class="btn btn-success" onclick="$('#pic').click();" type="button">Browse</button>
                     <button class="btn btn-primary" id="submit" type="button">Save</button>
-                </div>
-            </div>
-
-            <div class="col-sm-8 col-xs-12 upload-area">
-                <div class="scrolable-content scrolable-bar row" id="gallery">
                 </div>
             </div>
         </div>
