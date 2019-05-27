@@ -357,11 +357,16 @@ function intGallery(imageArray) {
   $('#gallery').html('');
   if(imageArray.length > 0) {
     imageArray.forEach((d, k) => {
-      var $ele = '<div class="col-lg-12 col-sm-4 col-xs-12 grid">\
+      var id = 'gal-' + uniqueid();
+      var $ele = '<div class="col-lg-4 col-sm-6 col-xs-12 grid" data-id="'+d.id+'" id="'+id+'">\
+                    <i class="fa fa-close remove-pic"></i>\
                     <div style="background: url(\'' + d.url + '\');">\
                     </div>\
                   </div>';
       $('#gallery').append($ele);
+      $('#gallery').children('#'+id).mouseover(function(){
+        console.log(this.getAttribute('data-id'));
+      });
     });
   }
 }
@@ -431,7 +436,8 @@ $(document).ready(function(){
                 }
               };
               g.src = img;*/
-              imageArray[k] = {url: img};
+              var id = 'pic-' + uniqueid();
+              imageArray[k] = {url: img, id: id};
               count++;
               if(count == data.data.content.images.length){
                 $('#loading').hide();
@@ -468,7 +474,8 @@ $(document).ready(function(){
           };
           g.src = URL.createObjectURL(f);*/
           count++;
-          imageArray[k] = {url: URL.createObjectURL(f)};
+          var id = 'pic-' + uniqueid();
+          imageArray[k] = {url: URL.createObjectURL(f), id: id};
           if(count == files.length){
             $('#loading').hide();
             intGallery(imageArray);

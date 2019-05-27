@@ -125,3 +125,18 @@ body {
 #custom-error-tag {
   display: none;
 }
+
+#gallery > .grid {
+  position: relative;
+}
+
+#gallery > .grid .remove-pic {
+  display: none;
+  position: absolute;
+  right: 7px;
+  font-size: 20px;
+}
+
+/*#gallery > .grid:hover .remove-pic {
+  display: block;
+}*/
