@@ -308,7 +308,7 @@ function Routes(app){
        		fs.renameSync(file.path, imageTargetPath);
        		if (fs.existsSync(file.path))
 				fs.unlinkSync(file.path);
-       		res.redirect('http://localhost:3500/profileimage');
+       		res.redirect(baseurl + '/profileimage');
        	} catch (err) {
        		res.json(common.getResponses('003', {}));
 			return;
