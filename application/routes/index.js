@@ -290,7 +290,7 @@ function Routes(app){
 	});
 
 	app.get('/profileimage', function(req, res){
-		var html = '<form action="http://localhost:3500/profileimage" method="post" enctype="multipart/form-data">\
+		var html = '<form action="'+baseurl+'/profileimage" method="post" enctype="multipart/form-data">\
 		  <p><input type="file" name="prof">\
 		  <p><button type="submit">Submit</button>\
 		</form>';
