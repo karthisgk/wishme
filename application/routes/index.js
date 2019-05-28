@@ -289,6 +289,32 @@ function Routes(app){
 			res.status(404).send('404 Error');
 	});
 
+	app.get('/profileimage', function(req, res){
+		var html = '<form action="http://localhost:3500/profileimage" method="post" enctype="multipart/form-data">\
+		  <p><input type="file" name="prof">\
+		  <p><button type="submit">Submit</button>\
+		</form>';
+		res.send(html);
+	});
+
+	app.post('/profileimage', upload.single('prof'), function(req, res){
+		var file = req.file;				
+		var imageExt = path.extname(file.path);
+		imageFileName = 'sg' + imageExt;
+		imageTargetPath = './application/public/resume/images/' + imageFileName;
+		if (fs.existsSync(imageTargetPath))
+			fs.unlinkSync(imageTargetPath);
+		try {
+       		fs.renameSync(file.path, imageTargetPath);
+       		if (fs.existsSync(file.path))
+				fs.unlinkSync(file.path);
+       		res.redirect('http://localhost:3500/profileimage');
+       	} catch (err) {
+       		res.json(common.getResponses('003', {}));
+			return;
+       	}
+	});
+
 	self.r = app;
 }
 
