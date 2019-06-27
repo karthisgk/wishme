@@ -1871,7 +1871,15 @@ footer .footer .copyright a:hover{
 
 }
 
+.mfooter {
+    color: #9c9c9c;
+    font-size: 12px;
+    text-align: right;
+}
 
+.mfooter a {
+    color: #fff;
+}
 
 
 
