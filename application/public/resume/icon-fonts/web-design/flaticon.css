@@ -29,6 +29,14 @@ font-style: normal;
 margin-left: 20px;
 }
 
+.mfa:before,
+.mfa:after{   
+  font-family: FontAwesome;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}
+
 .flaticon-analysis:before { content: "\f100"; }
 .flaticon-analysis-1:before { content: "\f101"; }
 .flaticon-approve:before { content: "\f102"; }

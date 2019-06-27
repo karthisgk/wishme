@@ -110,6 +110,37 @@ function Routes(app){
 		}
 	}, 100 * 100);
 
+	app.post('/contactme', function(req, res) {
+		res.header('Access-Control-Allow-Origin', '*');
+	    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+	    res.header('Access-Control-Allow-Headers', 'Content-Type');
+
+	    if(!req.body.name ||
+	    	!req.body.emailAddress ||
+	    	!req.body.message){
+	    	res.json({code: 'sgk_003', message: 'Wrong Input'});
+	    	return;
+	    }
+
+	    var adminMail = appConfig.smtp_config.auth.user;
+	    var content = '<h3>'+ req.body.name +'</h3>';
+		content += '<h4>' + req.body.emailAddress + '</h4>'; 
+		content += '<p>' + req.body.message + '</p>';
+	    self.smtp.getFile({title: 'contact-form', content: content}, (d) => {
+			var mail = {
+			    from: adminMail,
+			    to: 'karthisg.sg2@gmail.com',
+			    subject: 'contact-form - karthisgk.be' ,
+			    html: d.html
+			};
+			self.smtp.sendMail(mail, (err, res) => {
+				if (err) {console.log(err);}
+				
+			});
+		});
+		res.json({code: 'sgk_512', message: 'Contact details are submitted'});
+	});
+
 	app.get('/', function(req, res) {
 		var d = {title : config.name, baseurl: baseurl, content_id: ''};
 		res.render('index', d);		

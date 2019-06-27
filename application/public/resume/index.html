@@ -48,6 +48,15 @@
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
+<style type="text/css">
+.mcontact-error {
+    display: none;
+    margin-bottom: 10px;
+    color: #ff5b5b;
+    font-size: 18px;
+}
+</style>
+
 
 </head>
 <body>
@@ -107,13 +116,11 @@
                     </ul>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-8 dynamic">
-                    <a href="mailto:hi@tavonline.net" class="pull-right site-btn icon hidden-xs">Hire Me <i class="fa fa-paper-plane" aria-hidden="true"></i></a>
+                    <a href="mailto:karthisg.sg@gmail.com" class="pull-right site-btn icon hidden-xs">Hire Me <i class="fa fa-paper-plane" aria-hidden="true"></i></a>
                     <div class="hamburger pull-right hidden-lg hidden-md"><i class="fa fa-bars" aria-hidden="true"></i></div>
                     <div class="hidden-md social-icons pull-right"> 
-                        <a class="fb" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a> 
-                        <a class="tw" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a> 
-                        <a class="ins" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a> 
-                        <a class="dr" href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a> 
+                        <a class="ins" target="_blank" href="https://www.instagram.com/karthisg.sg/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a class="tw" target="_blank" href="https://twitter.com/karthi26356427"><i class="fa fa-twitter" aria-hidden="true"></i></a>                        
                     </div>
                 </div>
             </div>
@@ -132,9 +139,9 @@
                 <div class="row">
                     <section class="about-me line col-md-12 padding_30 padbot_45">
                     <div class="section-title"><span></span><h2>About Me</h2></div>
-                    <p class="top_30">Started earnest brother believe an exposed so. Me he believing daughters if forfeited at furniture. Age again and stuff downs spoke. Late hour new nay able fat each sell. Nor themselves age introduced frequently use unsatiable devonshire get. They why quit gay cold rose deal park. One same they four did ask busy. Reserved opinions fat him nay position. Breakfast as zealously incommode do agreeable furniture. One too nay led fanny allow plate.
-                        <br>
-                        <br> Quick six blind smart out burst. Perfectly on furniture dejection determine my depending an to. Add short water court fat. Her bachelor honoured perceive securing but desirous ham required. Questions deficient acuteness to engrossed as. Entirely led ten humoured greatest and yourself. Besides ye country on observe. She continue appetite endeavor she judgment interest the met. For she surrounded motionless fat resolution may. </p>
+                    <p class="top_30">
+                     Self-motivated Web Development professional with 1 years of experience
+                    looking for back-end service development.</p>
                 </section>
                 </div>
                 <!-- My Services Section -->
@@ -143,43 +150,33 @@
                     <div class="section-title bottom_45"><span></span><h2>My Services</h2></div>
                     <div class="row">
                         <!-- a service -->
-                        <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="col-md-4 col-sm-6 col-xs-12">
                             <div class="service">
                                 <div class="icon">
                                     <i class="flaticon-html"></i>
                                 </div>
                                 <span class="title">Web Development</span>
-                                <p class="little-text">I have been working on web design for 10 years.</p>
+                                <p class="little-text">I had worked on web Development for 1 years.</p>
                             </div>
                         </div>
                         <!-- a service -->
-                        <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="col-md-4 col-sm-6 col-xs-12">
                             <div class="service">
                                 <div class="icon">
-                                    <i class="flaticon-attach"></i>
+                                    <i class="mfa fa-android"></i>
                                 </div>
-                                <span class="title">Branding Identity</span>
-                                <p class="little-text">We will make you a brand that is catchy and leaves a trace.</p>
+                                <span class="title">Android Development</span>
+                                <p class="little-text">I have more ability to build an Android Applications.</p>
                             </div>
                         </div>
                         <!-- a service -->
-                        <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="col-md-4 col-sm-6 col-xs-12">
                             <div class="service">
                                 <div class="icon">
-                                    <i class="flaticon-vector"></i>
+                                    <i class="mfa fa-server"></i>
                                 </div>
-                                <span class="title">Illustrator</span>
-                                <p class="little-text">I have been working on illustration design for 6 years.</p>
-                            </div>
-                        </div>
-                        <!-- a service -->
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="service">
-                                <div class="icon">
-                                    <i class="flaticon-schedule"></i>
-                                </div>
-                                <span class="title">Fast Delivery</span>
-                                <p class="little-text">I deliver your business as fast as possible.</p>
+                                <span class="title">Web Hosting</span>
+                                <p class="little-text">I can host web application in AWS.</p>
                             </div>
                         </div>
                     </div>
@@ -812,16 +809,17 @@
                         <form class="site-form">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input class="site-input" placeholder="Name">
+                                    <input class="site-input name" placeholder="Name">
                                 </div>
                                 <div class="col-md-6">
-                                    <input class="site-input" placeholder="E-mail">
+                                    <input class="site-input email" placeholder="E-mail">
                                 </div>
                                 <div class="col-md-12">
-                                    <textarea class="site-area" placeholder="Message"></textarea>
+                                    <textarea class="site-area message" placeholder="Message"></textarea>
                                 </div>
                                 <div class="col-md-12 top_15 bottom_30">
-                                    <button class="site-btn" type="submit">Submit</button>
+                                    <p class="mcontact-error"></p>
+                                    <button class="site-btn mcontact" type="button">Submit</button>
                                 </div>
                             </div>
                         </form>  
@@ -830,17 +828,14 @@
                     <section class="contact-info col-md-6 padding_30 padbot_45">
                         <div class="section-title top_15 bottom_30"><span></span><h2>Contact Informations</h2></div>
                         <ul>
-                            <li><span>Address:</span> 107727 Santa Monica Boulevard Los Angeles</li>
-                            <li><span>Phone:</span> +38 012-3456-7890</li>
-                            <li><span>Job:</span> Freelancer</li>
-                            <li><span>E-mail:</span> chris@domain.com</li>
-                            <li><span>Skype:</span> chrisjohnson85</li>
+                            <li><span>Phone:</span> +91 90951-69428</li>
+                            <li><span>Job:</span> Web & Android Development</li>
+                            <li><span>E-mail:</span> karthisg.sg@gmail.com</li>
+                            <li><span>WhatsApp:</span>  <a href="https://wa.me/9095169428" target="_blank">https://wa.me/9095169428</a></li>
                             <li>
                                 <div class="social-icons top_15"> 
-                                    <a class="fb" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a> 
-                                    <a class="tw" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a> 
-                                    <a class="ins" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a> 
-                                    <a class="dr" href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a> 
+                                    <a class="ins" href="https://www.instagram.com/karthisg.sg/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a> 
+                                    <a class="tw" href="https://twitter.com/karthi26356427" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>        
                                 </div>
                             </li>
                         </ul>
@@ -848,7 +843,7 @@
                     <!-- Contact Map -->
                     <section class="contact-map col-md-12 top_15 bottom_15">
                         <div class="section-title bottom_30"><span></span><h2>Contact Map.</h2></div>  
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24396.455763004884!2d-115.13108354428735!3d36.18912977254862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos+Angeles%2C+Kaliforniya%2C+Birle%C5%9Fik+Devletler!5e0!3m2!1str!2str!4v1509525039851" height="350" style="border:0" allowfullscreen></iframe>
+                        <div style="width: 100%"><iframe width="100%" height="600" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=9.916643,78.129285&amp;q=18A%2C%20keelamathur%20pallivasal%20main%20street+(karthisgk)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=A&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/map-my-route/">Create route map</a></iframe></div><br />
                     </section>
                 </div>
             </div>
@@ -882,6 +877,59 @@
 <script src="js/Demo.js"></script>
 <link rel="stylesheet" href="css/Demo.min.css" />
  
+<script type="text/javascript">
+
+String.prototype.isEmail = function(){
+  var pattern = /^[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*@[a-z0-9]+(\-[a-z0-9]+)*(\.[a-z0-9]+(\-[a-z0-9]+)*)*\.[a-z]{2,4}$/;
+  return pattern.test(this);
+};
+
+function contactSubmit(){
+    var $name = $('.site-input.name').val();
+    var $email = $('.site-input.email').val();
+    var $message = $('.site-area.message').val();
+    var $error = $('.mcontact-error');
+    $error.hide().html('');
+    if($name.trim() == ''){
+        $error.show().html('Name is required');
+        return;
+    }
+    if($email.trim() == ''){
+        $error.show().html('Email Address is required');
+        return;
+    }
+    if(!$email.isEmail()){
+        $error.show().html('Email Address is invalid');
+        return;
+    }
+    if($message.trim() == ''){
+        $error.show().html('Message is required');
+        return;
+    }
+
+    $.ajax({
+        type: 'post',
+        url: 'http://localhost:3500/contactme',
+        dataType: 'json',
+        data: {name: $name, emailAddress: $email, message: $message},
+        success: j => {
+            if(j.code == 'sgk_512'){
+                var $sectionForm =  $('.contact-form');
+                var $ele = $('<h3>'+j.message+'</h3>').css({
+                    'color': 'rgb(252, 197, 48)'
+                });
+               $sectionForm.html($ele);
+            }else
+                $error.show().html(j.message);
+        }
+    });
+}
+
+$(document).ready(function(){
+    $('.mcontact.site-btn').click(contactSubmit);
+});
+
+</script>
 
 </body>
 </html>
