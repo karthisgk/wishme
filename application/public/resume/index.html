@@ -730,7 +730,7 @@ function contactSubmit(){
 
     $.ajax({
         type: 'post',
-        url: 'http://localhost:3500/contactme',
+        url: window.location.protocol + '//' + window.location.host + '/contactme',
         dataType: 'json',
         data: {name: $name, emailAddress: $email, message: $message},
         success: j => {
