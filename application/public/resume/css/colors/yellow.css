@@ -20,7 +20,7 @@ ul.profile-information li:before{
 
 /* Hover Color*/
 
-.site-btn:hover, header nav a.home-btn:hover, .section-title span{
+.site-btn, header nav a.home-btn, .section-title span{
    background-color: #ffb100 !important;
 }
 

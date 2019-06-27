@@ -3,11 +3,11 @@
 /*---------------------------------- */
 
 header nav a.home-btn, .estate figure .imgout .price, .site-btn, .timeline li:first-child i, nav ul li a:after, .owl-theme .owl-controls .owl-page span, .skill-list .progress .percentage, ul.profile-information li:first-child:before{
-    background: #ffc500 !important;
+    background: #f62459 !important;
 }
 
 header nav ul li a:hover, .events ul li .datenlocation span, .namenprice .price, .cbp-filter-item-active, .portfolio-content p span, #blog-post .blog-sidebar ul.category-list li a:hover, #blog-post .blog-sidebar .popular-posts ul li a .info{
-    color: #ffc500 !important;
+    color: #f62459 !important;
 }
 
 .spinner:before{
@@ -15,12 +15,12 @@ header nav ul li a:hover, .events ul li .datenlocation span, .namenprice .price,
 }
 
 ul.profile-information li:before{
-	border-color: #ffc500; 
+	border-color: #f62459; 
 }
 
 /* Hover Color*/
 
-.site-btn:hover, header nav a.home-btn:hover, .section-title span{
+.site-btn, header nav a.home-btn, .section-title span{
    background-color: #f62459 !important;
 }
 
@@ -33,7 +33,7 @@ ul.profile-information li:before{
 /* for light colors */
 
 .site-btn, header nav a.home-btn i, ul.profile-information li:first-child:before, #blog .blog-box .date span, #blog .blog-box .date span, .timeline li:first-child i, .cbp-l-loadMore-link.site-btn{
-	color:#000 !important;
+	color:#fff !important;
 }
 
 .timeline li:before, ul.profile-information li:before{
@@ -45,7 +45,7 @@ ul.profile-information li:before{
 }
 
 ul.profile-information li:first-child:after{
-    background: url(../../images/glasses.png) no-repeat; 
+    /*background: url(../../images/glasses.png) no-repeat; */
     background-size: 27px 10px;
 }
 
