@@ -43,7 +43,7 @@ $(document).ready(function () {
 
     $(document).on('click', '.demo .reset', function (e) {
         e.preventDefault();
-        $('#color').attr('href', 'css/colors/yellow.css');
+        $('#color').attr('href', 'css/colors/green.css');
         $('html').removeClass('boxed');
         $('body').removeAttr('style');
         $.removeCookie('color', { path: '/' });
