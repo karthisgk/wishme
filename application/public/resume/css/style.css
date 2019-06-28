@@ -1883,5 +1883,12 @@ footer .footer .copyright a:hover{
 
 
 
+.about-me ul {
+    margin: 10px;
+}
 
-
+@media (max-width: 500px) {
+    .about-me ul {
+        margin: 0px;
+    }
+}
